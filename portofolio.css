@@ -215,9 +215,21 @@
   color: #000000;
 }
 
-.bio p {
+.bio .me p {
   text-align: center;
   padding-top: 40px;
+}
+
+.me h1.light {
+  background-color: transparent;
+}
+
+.me {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
 }
 
 /* myskill */
@@ -541,8 +553,8 @@ input[type="submit"]:hover {
 
   .c-1 {
     min-width: 400px;
-    height: 50px;
-    top: -120px;
+    height: 150px;
+    top: -100px;
     padding: 0;
     position: relative;
     margin: auto;
@@ -551,11 +563,6 @@ input[type="submit"]:hover {
   .c-1 :nth-child(1) {
     font-size: 20px;
     padding-bottom: 18px;
-  }
-
-  .c-1 :nth-child(2),
-  .c-1 .wb {
-    font-size: 30px;
   }
 
   .c-1 :nth-child(1),
@@ -568,6 +575,54 @@ input[type="submit"]:hover {
     position: relative;
     width: 100%;
     height: 100vh;
+  }
+
+  .me {
+    width: 80%;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .bioText {
+    text-align: left;
+  }
+
+  .textLoad {
+    height: 200px;
+    left: 60px;
+    top: 80px;
+    margin: 0;
+    position: absolute;
+  }
+
+  .textLoad .text {
+    font-size: 30px;
+  }
+
+  .secText::before {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background-color: #252525;
+    border-left: 4px solid white;
+    animation: animate 4s steps(12) infinite;
+  }
+
+  .secText.check::before {
+    background-color: white;
+    border-color: black;
+  }
+
+  @keyframes animate {
+    40%,
+    60% {
+      left: 100%;
+    }
+    100% {
+      left: 0%;
+    }
   }
 
   .hero.scd {
@@ -635,7 +690,7 @@ input[type="submit"]:hover {
 
   .wrap {
     flex-direction: column-reverse;
-    height: 46em;
+    height: 60em;
     max-width: 1470px;
     width: 1500px;
     margin: auto;
@@ -673,6 +728,15 @@ input[type="submit"]:hover {
     margin: 10px;
   }
 
+  .c-1 {
+    min-width: 700px;
+    height: 150px;
+    top: -100px;
+    padding: 0;
+    position: relative;
+    margin: auto;
+  }
+
   .container {
     top: 0;
   }
@@ -683,20 +747,19 @@ input[type="submit"]:hover {
     height: 90vh;
   }
 
-  .hero.scd {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    position: relative;
-    box-sizing: border-box;
-    margin: auto;
+  .textLoad {
+    height: 200px;
+    left: 60px;
+    top: 100px;
+    margin: 0;
+    position: absolute;
   }
 
-  .hero.scd img {
-    margin-top: 100px;
+  .textLoad .text {
+    font-size: 40px;
   }
 
-  .hero.scd .hero-right {
+  .hero-right {
     width: 100%;
     margin: 0;
     padding: 0;

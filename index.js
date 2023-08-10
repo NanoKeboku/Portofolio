@@ -10,13 +10,13 @@ const text = document.querySelector(".secText");
 
 const textLoad = () => {
   setTimeout(() => {
-    text.textContent = "Web Dev";
+    text.textContent = ` Web Dev`;
   }, 0);
   setTimeout(() => {
-    text.textContent = "Designer";
+    text.textContent = ` Designer`;
   }, 4000);
   setTimeout(() => {
-    text.textContent = "UI/UX Designer";
+    text.textContent = ` UI/UX Designer`;
   }, 8000);
 };
 
