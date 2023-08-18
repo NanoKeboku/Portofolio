@@ -548,7 +548,7 @@ input[type="submit"]:hover {
     height: 270px;
     position: relative;
     margin: auto;
-    left: 0;
+    left: 0px;
   }
 
   .c-1 {

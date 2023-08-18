@@ -10,7 +10,7 @@ const text = document.querySelector(".secText");
 
 const textLoad = () => {
   setTimeout(() => {
-    text.textContent = ` Web Dev`;
+    text.textContent = ` Web Dev `;
   }, 0);
   setTimeout(() => {
     text.textContent = ` Designer`;
