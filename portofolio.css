@@ -13,16 +13,29 @@
 /* NAVBAR MIDLE */
 .nav {
   display: flex;
-  position: relative;
+  position: fixed;
   width: 100%;
   height: 70px;
-  padding: 20px;
+  z-index: 9999;
   box-sizing: border-box;
   margin: auto;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  border-collapse: collapse;
-  background-color: #252525;
+  color: white;
+}
+
+.nav.detil.light {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(3px);
+}
+
+.nav.detil.light a {
+  background-color: transparent;
+  font-size: 13px;
+  font-family: "Nunito", sans-serif;
+}
+
+.nav.detil.light a {
   color: white;
 }
 
@@ -47,10 +60,11 @@
   cursor: pointer;
 }
 
-.nav.detil h2 {
-  font-family: Monaco;
-  margin-left: 20px;
+.nav.detil h3 {
   cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  font-weight: bolder;
+  margin-top: 10px;
 }
 
 .right-nav a:hover {
@@ -65,16 +79,25 @@
   display: none;
 }
 
+.logo.light {
+  color: white;
+}
+.logo.light.check {
+  background-color: transparent;
+}
+
 #mode {
   background-color: transparent;
-  font-size: 30px;
   height: 50px;
   width: 50px;
-  position: absolute;
-  bottom: 20px;
+  z-index: 99999;
   border: transparent;
-  right: 30px;
-  top: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+#mode img {
+  width: 40px;
 }
 
 .light.check {
@@ -119,12 +142,13 @@
   margin: auto;
   position: relative;
   padding-left: 40px;
+  top: -100px;
 }
 
 .c-1 p {
   font-size: 2vw;
   text-align: left;
-  font-family: monospace;
+  font-family: "Inconsolata", monospace;
 }
 
 .c-1 :nth-child(2),
@@ -132,12 +156,41 @@
   font-size: 3vw;
 }
 
+.click-me {
+  position: absolute;
+  width: 170px;
+  height: 80px;
+  top: 300px;
+  left: 40px;
+  background-color: chocolate;
+  border-style: none;
+  border: 1px solid white;
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: 18px;
+  color: white;
+}
+
+.click-me:hover {
+  transition-duration: 0.5s;
+  background-color: transparent;
+}
+
+.click-me.light.check:hover {
+  background-color: transparent;
+  color: black;
+}
+
+.click-me.light.check {
+  background-color: #74b0ff;
+  border-color: black;
+}
+
 .textLoad {
   overflow: hidden;
 }
 
 .textLoad .text {
-  font-family: monospace;
+  font-family: "Nanum Gothic", sans-serif;
   font-size: 50px;
   font-weight: 600;
   position: relative;
@@ -145,6 +198,10 @@
 
 .textLoad .secText {
   color: chocolate;
+}
+
+.secText.light.check {
+  color: #74b0ff;
 }
 
 .secText::before {
@@ -175,23 +232,24 @@
 }
 
 .c-2 {
-  width: 450px;
-  height: 430px;
+  width: 70%;
+  height: 900px;
   min-height: auto;
   display: flex;
-  border-radius: 100%;
-  overflow: hidden;
-  margin: auto;
   position: relative;
-  margin-right: 40px;
-  right: 100px;
-  box-shadow: 6px 7px 20px rgba(0, 0, 0, 0.3);
+  background-color: rgb(161, 161, 161);
+  overflow: hidden;
 }
 
 .c-2 img {
+  object-fit: contain;
   width: 100%;
   height: auto;
-  object-fit: cover;
+  transform: translate(0, 200px) scale(1.5);
+}
+
+.c-2.light.check {
+  background-color: #74b0ff;
 }
 
 .bio {
@@ -207,17 +265,21 @@
 
 .bio.light.check p {
   color: #000000;
-  background-color: #a7a6a6;
+  background-color: #e4f0ff;
 }
 
 .bio.light.check {
-  background-color: #a7a6a6;
+  background-color: #e4f0ff;
   color: #000000;
 }
 
-.bio .me p {
-  text-align: center;
-  padding-top: 40px;
+.name.light {
+  background-color: transparent;
+  color: chocolate;
+}
+
+.name.light.check {
+  color: #74b0ff;
 }
 
 .me h1.light {
@@ -232,15 +294,26 @@
   width: 50%;
 }
 
+.text p {
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+}
+
 /* myskill */
 
 .myskill {
   display: flex;
-  flex-direction: column;
-  margin: auto;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: stretch;
   width: 100%;
-  height: 100vh;
-  background-color: #252525;
+  height: 80vh;
+  background-color: #202020;
+}
+
+.myskill.light.check {
+  background-color: #e4f0ff;
 }
 
 .its-me {
@@ -250,48 +323,57 @@
   align-items: center;
 }
 
-* {
-  color: white;
+.its-me.light.check {
+  background-color: transparent;
 }
 
 .container {
-  display: grid;
-  grid-template: 200px / auto auto auto auto;
-  grid-gap: 60px;
-  margin: auto;
-  box-sizing: border-box;
-  position: relative;
-  top: -100px;
-}
-
-.container > .card {
-  border: 1px solid white;
-  min-width: 240px;
-  height: 250px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  border-collapse: collapse;
 }
 
-/* ICON CARD */
-.card.one,
-.two,
-.three,
-.four {
-  display: flex;
-  flex-direction: column;
+* {
+  color: white;
+}
+.card-skill.light {
+  background-color: #181717;
+  border: none;
 }
 
-.card .body-card h4 {
-  color: rgb(201, 135, 12);
-}
-
-.card:hover {
-  transform: translate(0, -20px);
-  box-shadow: 0px 15px 16px 1px rgb(29, 29, 29);
+.card-skill.light:hover {
+  background-color: chocolate;
   transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.card-skill.light.check {
+  background-color: white;
+  color: black;
+}
+
+.card-skill.light.check:hover {
+  background-color: #74b0ff;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.card-title.light {
+  color: white;
+}
+.card-title.light.check {
+  color: black;
+}
+
+.card-title.light.check,
+.card-text.light.check {
+  background-color: transparent;
+}
+
+.exp {
+  width: 100%;
+  height: 100vh;
+  background-color: #202020;
+  margin: 0;
+  padding: 0;
 }
 
 .contact {
@@ -385,7 +467,7 @@ input[type="submit"]:hover {
   background-color: black;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   header {
     background-color: transparent;
   }
@@ -521,8 +603,8 @@ input[type="submit"]:hover {
   }
 
   #mode {
-    right: 40px;
-    top: 20px;
+    right: 0px;
+    top: 0px;
     z-index: 9999;
     display: flex;
     position: absolute;
@@ -539,35 +621,56 @@ input[type="submit"]:hover {
 
   .hero {
     max-height: none;
-    height: 100vh;
+    height: 90vh;
     width: 100%;
   }
 
   .c-2 {
-    width: 270px;
-    height: 270px;
+    width: 100%;
+    height: 300px;
     position: relative;
     margin: auto;
     left: 0px;
+    margin-top: 80px;
+  }
+
+  .c-2 img {
+    transform: translate(0, 80px) scale(1.5);
   }
 
   .c-1 {
-    min-width: 400px;
-    height: 150px;
-    top: -100px;
+    min-width: 80%;
+    height: 400px;
+    top: 50px;
     padding: 0;
+  }
+
+  .c-1 p {
+    top: 0px;
     position: relative;
-    margin: auto;
   }
 
   .c-1 :nth-child(1) {
-    font-size: 20px;
+    font-size: 25px;
     padding-bottom: 18px;
   }
 
-  .c-1 :nth-child(1),
-  .c-1 :nth-child(2) {
-    text-align: center;
+  .c-1 p {
+    text-align: left;
+    left: 0px;
+  }
+
+  .c-1 .textLoad {
+    text-align: left;
+    left: 0px;
+  }
+
+  .click-me {
+    width: 150px;
+    height: 60px;
+    position: relative;
+    left: 0px;
+    top: 80px;
   }
 
   .bio {
@@ -578,9 +681,13 @@ input[type="submit"]:hover {
   }
 
   .me {
-    width: 80%;
-    padding-left: 40px;
-    padding-right: 40px;
+    width: 100%;
+  }
+
+  .text p {
+    padding: 0;
+    margin: 0;
+    text-align: left;
   }
 
   .bioText {
@@ -589,14 +696,12 @@ input[type="submit"]:hover {
 
   .textLoad {
     height: 200px;
-    left: 60px;
-    top: 80px;
-    margin: 0;
+    top: 90px;
     position: absolute;
   }
 
   .textLoad .text {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .secText::before {
@@ -682,7 +787,7 @@ input[type="submit"]:hover {
   }
 }
 
-@media (min-width: 701px) and (max-width: 1239px) {
+@media (min-width: 769px) and (max-width: 1239px) {
   .container {
     grid-template: 200px / auto auto;
     row-gap: 110px;
@@ -700,12 +805,15 @@ input[type="submit"]:hover {
   }
 
   .c-2 {
-    width: 350px;
-    height: 350px;
+    width: 100%;
+    height: 30em;
     position: relative;
     margin: auto;
-    left: 0;
-    top: 40px;
+    top: -100px;
+  }
+
+  .c-2 img {
+    transform: translate(0, 120px) scale(1.5);
   }
 
   .c-1 p,
@@ -715,11 +823,11 @@ input[type="submit"]:hover {
     padding: 0;
     position: relative;
     margin: auto;
-    text-align: center;
+    text-align: left;
   }
 
   .c-1 p {
-    font-size: 25px;
+    font-size: 36px;
   }
 
   .c-1 :nth-child(2),
@@ -731,10 +839,23 @@ input[type="submit"]:hover {
   .c-1 {
     min-width: 700px;
     height: 150px;
-    top: -100px;
+    top: -200px;
     padding: 0;
     position: relative;
     margin: auto;
+  }
+
+  #click-me {
+    position: relative;
+    left: 0;
+    top: 200px;
+    z-index: 9999;
+    width: 180px;
+    height: 70px;
+  }
+
+  .click-me.light {
+    left: 0px;
   }
 
   .container {
@@ -747,16 +868,24 @@ input[type="submit"]:hover {
     height: 90vh;
   }
 
+  .me {
+    width: 80%;
+  }
+
+  .text p {
+    text-align: left;
+  }
+
   .textLoad {
     height: 200px;
-    left: 60px;
-    top: 100px;
+    left: -10px;
+    top: 130px;
     margin: 0;
     position: absolute;
   }
 
   .textLoad .text {
-    font-size: 40px;
+    font-size: 55px;
   }
 
   .hero-right {
