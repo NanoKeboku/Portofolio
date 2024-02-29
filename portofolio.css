@@ -24,6 +24,10 @@
   color: white;
 }
 
+.phone {
+  display: none;
+}
+
 .nav.detil.light {
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(3px);
@@ -105,6 +109,10 @@
   color: black;
 }
 
+.light.blue {
+  color: #74b0ff;
+}
+
 .lightTheme {
   background-color: white;
   color: #000000;
@@ -132,6 +140,7 @@
   overflow: hidden;
   background: #252525;
   color: white;
+  transition: 0.3s;
   padding: 0;
 }
 
@@ -149,6 +158,7 @@
   font-size: 2vw;
   text-align: left;
   font-family: "Inconsolata", monospace;
+  background-color: transparent;
 }
 
 .c-1 :nth-child(2),
@@ -168,6 +178,7 @@
   font-family: "Nanum Gothic", sans-serif;
   font-size: 18px;
   color: white;
+  transition: 0.3s;
 }
 
 .click-me:hover {
@@ -213,6 +224,7 @@
   left: 0;
   background-color: #252525;
   border-left: 4px solid white;
+  transition: 0.3s;
   animation: animate 4s steps(12) infinite;
 }
 
@@ -243,9 +255,10 @@
 
 .c-2 img {
   object-fit: contain;
-  width: 100%;
+  width: 60%;
   height: auto;
-  transform: translate(0, 200px) scale(1.5);
+  position: relative;
+  transform: translate(150px, 100px) scale(1.5);
 }
 
 .c-2.light.check {
@@ -261,6 +274,7 @@
   justify-content: center;
   align-items: center;
   margin: auto;
+  transition: 0.3s;
 }
 
 .bio.light.check p {
@@ -276,14 +290,16 @@
 .name.light {
   background-color: transparent;
   color: chocolate;
+  transition: 0.3s;
 }
 
 .name.light.check {
   color: #74b0ff;
 }
 
-.me h1.light {
+.bio h1.light {
   background-color: transparent;
+  transition: 0.3s;
 }
 
 .me {
@@ -303,24 +319,32 @@
 
 .myskill {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  align-items: center;
-  align-content: stretch;
+  flex-direction: column;
+  align-content: center;
+  justify-content: start;
   width: 100%;
-  height: 80vh;
-  background-color: #202020;
+  height: 60vh;
+  background-color: #181717;
+  background-image: url(ICON/bubble-dark.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.3s;
 }
 
 .myskill.light.check {
-  background-color: #e4f0ff;
+  background-color: white;
+  background-image: url(ICON/bubble-light.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .its-me {
   display: flex;
-  margin: auto;
   position: relative;
   align-items: center;
+  transition: 0.3s;
+  margin: 70px auto 70px auto;
 }
 
 .its-me.light.check {
@@ -335,8 +359,22 @@
   color: white;
 }
 .card-skill.light {
-  background-color: #181717;
+  background-color: #393939;
   border: none;
+  transition: 0.3s;
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  width: 60%;
+  height: 20%;
+  justify-content: space-between;
 }
 
 .card-skill.light:hover {
@@ -346,8 +384,7 @@
 }
 
 .card-skill.light.check {
-  background-color: white;
-  color: black;
+  background-color: #cee3ff;
 }
 
 .card-skill.light.check:hover {
@@ -368,19 +405,32 @@
   background-color: transparent;
 }
 
+.card-skill.light img {
+  width: 70px;
+}
+
+.card-skill.light .figma {
+  width: 40px;
+}
+
 .exp {
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   background-color: #202020;
   margin: 0;
   padding: 0;
+  transition-duration: 0.3s;
+}
+
+.exp.light.check {
+  background-color: #cddff8;
 }
 
 .contact {
   display: flex;
   width: 100%;
   height: 100vh;
-  background-color: #202020;
+  background-color: #2e2e2e;
   margin: auto;
   box-sizing: border-box;
   padding: 40px;
@@ -565,6 +615,10 @@ input[type="submit"]:hover {
     position: relative;
   }
 
+  .left-side.active.light.check.blue.blue-active li::after {
+    background-color: #74b0ff;
+  }
+
   .left-side.active.light.check li::after {
     content: " ";
     background-color: black;
@@ -602,12 +656,17 @@ input[type="submit"]:hover {
     transform: translate(0px, -9px) rotate(-40deg);
   }
 
-  #mode {
-    right: 0px;
-    top: 0px;
+  .phone {
+    left: 120px;
+    top: -10px;
     z-index: 9999;
     display: flex;
-    position: absolute;
+    position: relative;
+    display: none;
+  }
+
+  .phone.active {
+    display: flex;
   }
 
   /* BODY */
@@ -635,7 +694,7 @@ input[type="submit"]:hover {
   }
 
   .c-2 img {
-    transform: translate(0, 80px) scale(1.5);
+    transform: translate(120px, 80px) scale(1.5);
   }
 
   .c-1 {
@@ -746,8 +805,8 @@ input[type="submit"]:hover {
   }
 
   .myskill {
-    height: 230vh;
-    padding-top: 130px;
+    height: 50vh;
+    padding-top: 30px;
     box-sizing: border-box;
   }
 
@@ -758,6 +817,20 @@ input[type="submit"]:hover {
     justify-content: center;
     margin: auto;
     top: 0;
+  }
+
+  .card-skill.light {
+    width: 50px;
+    height: 50px;
+    flex-wrap: wrap;
+  }
+
+  .card-skill.light .figma {
+    width: 15px;
+  }
+
+  .card-skill.light img {
+    width: 20px;
   }
 
   /* contact */
@@ -813,7 +886,7 @@ input[type="submit"]:hover {
   }
 
   .c-2 img {
-    transform: translate(0, 120px) scale(1.5);
+    transform: translate(200px, 120px) scale(1.5);
   }
 
   .c-1 p,
@@ -892,5 +965,18 @@ input[type="submit"]:hover {
     width: 100%;
     margin: 0;
     padding: 0;
+  }
+
+  .card-skill.light {
+    width: 70px;
+    height: 70px;
+  }
+
+  .card-skill.light .figma {
+    width: 30px;
+  }
+
+  .card-skill.light img {
+    width: 50px;
   }
 }
