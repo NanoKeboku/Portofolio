@@ -254,7 +254,6 @@
 }
 
 .c-2 img {
-  object-fit: contain;
   width: 60%;
   height: auto;
   position: relative;
@@ -535,8 +534,8 @@ input[type="submit"]:hover {
   /* NAVBAR LEFT */
 
   .left-nav {
-    display: none;
-    left: -30vw;
+    display: flex;
+    left: -50vw;
     background-color: #252525;
     width: 220px;
     box-sizing: border-box;
@@ -680,7 +679,7 @@ input[type="submit"]:hover {
 
   .hero {
     max-height: none;
-    height: 90vh;
+    height: auto;
     width: 100%;
   }
 
@@ -689,19 +688,30 @@ input[type="submit"]:hover {
     height: 300px;
     position: relative;
     margin: auto;
-    left: 0px;
     margin-top: 80px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+
+  .mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .c-2 img {
-    transform: translate(120px, 80px) scale(1.5);
+    position: relative;
+    width: 200px;
+    left: -130px;
   }
 
   .c-1 {
     min-width: 80%;
-    height: 400px;
+    height: 430px;
     top: 50px;
     padding: 0;
+    margin-top: 50px;
   }
 
   .c-1 p {
@@ -808,6 +818,7 @@ input[type="submit"]:hover {
     height: 50vh;
     padding-top: 30px;
     box-sizing: border-box;
+    align-items: center;
   }
 
   .container {
@@ -817,6 +828,12 @@ input[type="submit"]:hover {
     justify-content: center;
     margin: auto;
     top: 0;
+  }
+
+  .row {
+    gap: 20px;
+    justify-content: flex-start;
+    width: 80%;
   }
 
   .card-skill.light {
