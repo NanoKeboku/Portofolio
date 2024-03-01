@@ -543,7 +543,7 @@ input[type="submit"]:hover {
     position: absolute;
     bottom: 100px;
     width: 100px;
-    top: 0;
+    top: -8px;
     left: 100px;
     height: 100px;
     background-color: rebeccapurple;
@@ -787,12 +787,12 @@ input[type="submit"]:hover {
 
   .textLoad {
     height: 200px;
-    top: 90px;
     position: absolute;
   }
 
   .textLoad .text {
     font-size: 28px;
+    top: 5px;
   }
 
   .secText::before {
