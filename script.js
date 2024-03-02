@@ -19,7 +19,7 @@ const textLoad = () => {
   }, 4000);
   setTimeout(() => {
     text.textContent = ` UI/UX Designer`;
-  }, 8100);
+  }, 8050);
 };
 
 textLoad();
